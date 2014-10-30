@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  institute: MyString
+  passout_year: 2014-10-30
+  score: MyString
+  user_id: 1
+
+two:
+  name: MyString
+  institute: MyString
+  passout_year: 2014-10-30
+  score: MyString
+  user_id: 1

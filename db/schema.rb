@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141028133051) do
+ActiveRecord::Schema.define(version: 20141030134423) do
+
+  create_table "education_details", force: true do |t|
+    t.string   "name"
+    t.string   "institute"
+    t.date     "passout_year"
+    t.string   "score"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "educationdetails", force: true do |t|
     t.integer  "ssc_yr"
@@ -66,5 +76,17 @@ ActiveRecord::Schema.define(version: 20141028133051) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "work_experiences", force: true do |t|
+    t.string   "name_of_company"
+    t.text     "company_description"
+    t.string   "your_designation"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "user_id"
+    t.string   "employment_status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

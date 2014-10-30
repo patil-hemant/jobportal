@@ -1,0 +1,60 @@
+<%= form_for([@user,@work_experience],:html=>{:multipart=>true}) do |f| %>
+  <% if @work_experience.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@work_experience.errors.count, "error") %> prohibited this work_experience from being saved:</h2>
+
+      <ul>
+      <% @work_experience.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="jumbotron">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Previous Company Details</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-xs-3" ><b>company Name :<b><br> <%= f.text_field :name_of_company%>
+      </div>
+      <div class="col-xs-9" ><b>Company Description :</b><br><%= f.text_area :company_description%>
+      </div> 
+      <div class="col-xs-3" ><b>Start Date :<b><br> <%= f.text_field :start_date%>
+      </div>
+      <div class="col-xs-9" ><b>End Date :</b><br><%= f.text_field :end_date%>
+      </div> 
+       <div class="col-xs-9" ><b>Your Designation :</b><br><%= f.text_field :your_designation%>
+      </div> 
+  </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Current Company Details</h3>
+  </div>
+  <div class="panel-body">
+   <div class="row">
+      <div class="col-xs-3" ><b>company Name :<b><br> <%= f.text_field :name_of_company%>
+      </div>
+      <div class="col-xs-9" ><b>Company Description :</b><br><%= f.text_area :company_description%>
+      </div> 
+      <div class="col-xs-3" ><b>Your Designation :<b><br> <%= f.text_field :your_designation%>
+      </div>
+      <div class="col-xs-9" ><b>Start Date :</b><br><%= f.text_field :start_date%>
+      </div> 
+       
+  </div>
+  </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+      <%= f.submit "Save", :class => "btn btn-success"%>
+      <%= link_to "Cancel",new_work_experience_path,:class => "btn btn-warning"%>
+    </div>
+</div>
+</div>
+<% end %>

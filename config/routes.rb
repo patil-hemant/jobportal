@@ -1,12 +1,21 @@
 Rails.application.routes.draw do
- get 'home/index'
-  devise_for :users
-resources :users do
-     resources :educationdetails
-    end  
 
-resources :users
-resources :educationdetails
+
+
+  resources :education_details
+
+ devise_for :users
+
+
+
+ resources :work_experiences
+ resources :users do
+  member do
+    get "edit_profile"
+    put :update_profile
+  end
+end
+root 'home#index'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

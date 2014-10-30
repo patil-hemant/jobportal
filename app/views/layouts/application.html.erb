@@ -7,12 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
- <div class="container">
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-   <%= render 'layouts/user_widget' %>
-  <%= yield %>
-</div>
+  <%= render 'header' %>
+   <div class="container">
+    <%=  render "flash_message" %>
+    <%= yield %>
+    <%= render 'footer' %>
+  </div>
  
 
 

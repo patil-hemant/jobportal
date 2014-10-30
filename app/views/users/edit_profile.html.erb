@@ -1,5 +1,9 @@
+<<<<<<< HEAD:app/views/users/edit_profile.html.erb
 <%= form_for(@user, url: update_profile_user_path(@user), html: {method: "put",:multipart => true}) do |f| %>
 
+=======
+<%= form_for(@user, url: update_profile_user_path(@user), html: {method: "put"}, html: {:multipart => true}) do |f| %>
+>>>>>>> 06aa96b81c40c986a74c0fcdba726885d971e2d7:app/views/users/new.html.erb
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:
@@ -102,5 +106,10 @@
   </div>
 
 <% end %>
+<<<<<<< HEAD:app/views/users/edit_profile.html.erb
 </div>
 </div>
+=======
+
+</div>
+>>>>>>> 06aa96b81c40c986a74c0fcdba726885d971e2d7:app/views/users/new.html.erb

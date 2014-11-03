@@ -1,0 +1,49 @@
+<%= form_for(@work_experience) do |f| %>
+  <% if @work_experience.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@work_experience.errors.count, "error") %> prohibited this work_experience from being saved:</h2>
+
+      <ul>
+      <% @work_experience.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="jumbotron">
+   
+    <table>
+      <tr>
+        <td> <%= f.label :company_name %></td>
+        <td><div class="col-lg-12"> <%= f.text_field :company_name, :class => "form-control" %></div></td>
+      </tr><tr><td>&nbsp;</td></tr>
+      <tr>
+        <td><%= f.label :Company_description %></td>
+        <td><div class="col-lg-12"><%= f.text_area :Company_description, :class => "form-control" %></div></td>
+      </tr><tr><td>&nbsp;</td></tr>
+      <tr>
+        <td><%= f.label :your_designation %></td>
+        <td><div class="col-lg-12"><%= f.text_field :your_designation, :class => "form-control" %></div></td>
+      </tr><tr><td>&nbsp;</td></tr>
+      <tr>
+        <td><%= f.label :start_date %></td>
+        <td><div class="col-lg-12"><%= f.date_select :start_date %></div></td>
+      </tr><tr><td>&nbsp;</td></tr>
+      <tr>
+        <td><%= f.label :end_date %></td>
+        <td><div class="col-lg-12"><%= f.date_select :end_date %></div></td>
+      </tr>
+      
+    </table>
+     
+</div>   
+ <div class="row">
+    <div class="col-xs-12">
+      <%= f.submit "Save", :class => "btn btn-success"%>
+      <%= link_to "Cancel",new_work_experience_path,:class => "btn btn-warning"%>
+     
+    </div>
+
+</div>
+</div>
+<% end %>

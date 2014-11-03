@@ -1,9 +1,4 @@
-<<<<<<< HEAD:app/views/users/edit_profile.html.erb
 <%= form_for(@user, url: update_profile_user_path(@user), html: {method: "put",:multipart => true}) do |f| %>
-
-=======
-<%= form_for(@user, url: update_profile_user_path(@user), html: {method: "put"}, html: {:multipart => true}) do |f| %>
->>>>>>> 06aa96b81c40c986a74c0fcdba726885d971e2d7:app/views/users/new.html.erb
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:
@@ -20,84 +15,61 @@
 <div class="container">
   <div class="jumbotron">
   <br> 
-  <div class="row">
-      <div class="col-xs-3" ><b>First Name :<b><br> <%= f.text_field :first_name%>
-      </div>
-      <div class="col-xs-9" ><b>Last Name :</b><br><%= f.text_field :last_name%>
-      </div> 
-  </div>
+  <table class="table">
+    <tr>
+      <td><b>First Name <b></td> 
+      <td><div class="col-lg-4"><%= f.text_field :first_name, :class=>"form-control"%></div></td>
+    </tr>
+    <tr>
+      <td><b>Last Name </b></td>
+      <td><div class="col-lg-4"><%= f.text_field :last_name, :class=>"form-control"%></div></td>
+    </tr>
 
- 
-  <div class="row">
-      <div class="col-xs-3" ><b>Gender :</b><br><%= f.select :gender,options_for_select(%w[Male Female]) %>
-      </div>
-      <div class="col-xs-9" ><b>Contact Number :</b><br><%= f.text_field :contact_no%>
-      </div>
-  </div>
- 
-  
-  <div class="row">
-    <div class="col-xs-12" >
-    <b>Address :</b><br>
-      <%= f.text_area :address, :size=>"51x2"%>
-    </div>
-  </div>
 
- 
-   <div class="row">
-      <div class="col-xs-3" ><b>Ready to Relocate</b><br><%= f.select :ready_to_relocate,options_for_select(%w[Yes No])%>
-      </div>
-      <div class="col-xs-9" ><b>Current Location :</b><br><%= f.text_field :current_location%>
-      </div>
-  </div>
+    <tr>
+      <td><b>Gender </b></td>
+      <td><div class="col-lg-4"><%= f.select :gender,options_for_select(%w[Male Female]), :class=>"form-control" %></td>
+    </tr>
+    <tr>
+      <td><b>Contact Number </b></td>
+      <td><div class="col-lg-4"><%= f.text_field :contact_no, :class=>"form-control"%></div></td>
+    </tr>
+    <tr>
+    <td><b>Address </b></td>
+    <td><div class="col-lg-4"><%= f.text_area :address, :class=>"form-control"%></div></td>
+    </tr>
+    <tr>
+      <td><b>Ready to Relocate</b></td>
+      <td><div class="col-lg-4"><%= f.select :ready_to_relocate,options_for_select(%w[Yes No])%></div></td>
+    <tr>
+      <td><b>Current Location </b></td>
+      <td><div class="col-lg-4"><%= f.text_field :current_location, :class=>"form-control"%></div></td>
+    <tr>
+      <td><b>Skills </b></td>
+      <td><div class="col-lg-4"><%= f.text_area :skills, :class=>"form-control"%></div></td>
+    </tr>
+    <tr>
+      <td><b>Twitter URL </b></td>
+      <td> <div class="col-lg-4"><%= f.text_field :twitter_url, :size=>"51x2", :class=>"form-control"%></div></td>
+    </tr>
+    <tr>
+      <td><b>Linkedin URL </b></td>
+     <td><div class="col-lg-4"><%= f.text_field :linkedin_url, :size=>"51x2", :class=>"form-control"%></div></td>
+    </tr>
+    <tr>
+      <td><b>Blog URL </b></td>
+      <td><div class="col-lg-4"><%= f.text_field :blog_url, :size=>"51x2", :class=>"form-control"%></div></td>
+    </tr>
+    <tr>
+      <td><b>Upload Profile Image </b></td>
+      <td><div class="col-lg-4"><%= f.file_field :image, :class=>"span7" %></div></td>
+    </tr>
+    <tr>
+      <td><b>Upload Resume </b></td>
+      <td><div class="col-lg-4"><%= f.file_field :resume, :class=>"span7" %></div></td>
+    </tr>
 
- 
-   <div class="row">
-    <div class="col-xs-12" >
-    <b>Skills :</b><br>
-      <%= f.text_area :skills, :size=>"51x2"%>
-    </div>
-  </div>
- 
-
-   <div class="row">
-    <div class="col-xs-12" >
-    <b>Twitter URL :</b><br>
-      <%= f.text_field :twitter_url, :size=>"51x2"%>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-xs-12" >
-    <b>Linkedin URL :</b><br>
-      <%= f.text_field :linkedin_url, :size=>"51x2"%>
-    </div>
-  </div>
-
-  
-  <div class="row">
-    <div class="col-xs-12" >
-    <b>Blog URL :</b><br>
-      <%= f.text_field :blog_url, :size=>"51x2"%>
-    </div>
-  </div>
-  
- 
-  <div class="row">
-  <div class="col-xs-12">
-    <b>Upload Profile Image :</b><br>
-      <%= f.file_field :image, :class=>"span7" %>
-  </div>
-  </div>
-  
- 
-  <div class="row">
-  <div class="col-xs-12">
-    <b>Upload Resume :</b><br>
-      <%= f.file_field :resume, :class=>"span7" %>
-  </div>
-  </div>
-  
+  </table>
   <div class="row">
     <div class="col-xs-12">
       <%= f.submit "Save", :class => "btn btn-primary"%>
@@ -106,10 +78,10 @@
   </div>
 
 <% end %>
-<<<<<<< HEAD:app/views/users/edit_profile.html.erb
-</div>
-</div>
-=======
 
 </div>
->>>>>>> 06aa96b81c40c986a74c0fcdba726885d971e2d7:app/views/users/new.html.erb
+</div>
+
+
+</div>
+

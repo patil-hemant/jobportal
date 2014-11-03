@@ -11,19 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141030134423) do
+ActiveRecord::Schema.define(version: 20141031070358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "education_details", force: true do |t|
-    t.string   "name"
     t.string   "institute"
     t.date     "passout_year"
     t.string   "score"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "course"
+    t.string   "pg_course"
+    t.string   "pg_institute"
+    t.date     "pg_passout_year"
+    t.string   "pg_score"
   end
 
   create_table "users", force: true do |t|
@@ -58,13 +62,12 @@ ActiveRecord::Schema.define(version: 20141030134423) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "work_experiences", force: true do |t|
-    t.string   "name_of_company"
-    t.text     "company_description"
+    t.string   "company_name"
+    t.text     "Company_description"
     t.string   "your_designation"
     t.date     "start_date"
     t.date     "end_date"
     t.integer  "user_id"
-    t.string   "employment_status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

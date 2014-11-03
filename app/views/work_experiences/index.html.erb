@@ -1,0 +1,36 @@
+
+<div class="jumbotron">
+<table class="table">
+  <thead>
+    <tr>
+      <th>Company name</th>
+      <th>Company description</th>
+      <th>Your designation</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @work_experiences.each do |work_experience| %>
+      <tr>
+        <td><%= work_experience.company_name %></td>
+        <td><%= work_experience.Company_description %></td>
+        <td><%= work_experience.your_designation %></td>
+        <td><%= work_experience.start_date %></td>
+        <td><%= work_experience.end_date %></td>
+        <td><%= work_experience.user_id %></td>
+    
+        <td><%= link_to 'Edit', edit_work_experience_path(work_experience),:class =>"btn btn-primary" %></td>
+        <td><%= link_to 'Destroy', work_experience, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add more work experience', new_work_experience_path,:class => "btn btn-info"%>
+</div>

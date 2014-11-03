@@ -1,5 +1,5 @@
 class EducationDetailsController < ApplicationController
-   respond_to :html, :xml, :json
+  respond_to :html, :xml, :json
   before_action :set_education_detail, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -41,6 +41,6 @@ class EducationDetailsController < ApplicationController
     end
 
     def education_detail_params
-      params.require(:education_detail).permit(:name, :institute, :passout_year, :score)
+      params.require(:education_detail).permit(:course, :institute, :passout_year, :score, :pg_course, :pg_institute, :pg_passout_year, :pg_score)
     end
 end

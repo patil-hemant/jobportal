@@ -1,20 +1,14 @@
 Rails.application.routes.draw do
-
-
-
-  resources :education_details
-
  devise_for :users
-
-
-
- resources :work_experiences
  resources :users do
   member do
     get "edit_profile"
     put :update_profile
   end
 end
+
+  resources :education_details
+   resources :work_experiences
 root 'home#index'
 
   

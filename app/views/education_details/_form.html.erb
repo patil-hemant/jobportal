@@ -11,23 +11,76 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="jumbotron">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+       <h3 class="panel-title">Graduation Details</h3>
+      </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-xs-3">
+          <%= f.label :course %><br>
+          <%= f.text_field :course, :class => "form-control" %>
+        </div>   
+        <div class="col-xs-3">
+          <%= f.label :institute %><br>
+          <%= f.text_field :institute, :class => "form-control" %>
+        </div>
+      </div> 
+  <br>  
+      <div class="row">
+         <div class="col-xs-3">
+          <%= f.label :score %><br>
+          <%= f.text_field :score, :class => "form-control" %>
+        </div>
+        <div class="col-xs-3">
+          <%= f.label :passout_year %><br>
+          <%= f.date_select :passout_year, :class => "form-control" %>
+        </div>
+       
+      </div>
+
+      
+  </div>  
+
+  </div>  
+   <div class="panel panel-info">
+        <div class="panel-heading">
+         <h3 class="panel-title">Post Graduation Details</h3>
+        </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-xs-3">
+            <%= f.label :course %><br>
+            <%= f.text_field :pg_course, :class => "form-control" %>
+          </div>   
+          <div class="col-xs-3">
+            <%= f.label :institute %><br>
+            <%= f.text_field :pg_institute, :class => "form-control" %>
+          </div>
+        </div> 
+    <br>  
+        <div class="row">
+           <div class="col-xs-3">
+            <%= f.label :score %><br>
+            <%= f.text_field :pg_score, :class => "form-control"%>
+          </div>
+          <div class="col-xs-3">
+            <%= f.label :passout_year %><br>
+            <%= f.date_select :pg_passout_year, :class => "form-control" %>
+          </div>
+         
+        </div>
+
+     
+    </div> 
+
   </div>
-  <div class="field">
-    <%= f.label :institute %><br>
-    <%= f.text_field :institute %>
-  </div>
-  <div class="field">
-    <%= f.label :passout_year %><br>
-    <%= f.date_select :passout_year %>
-  </div>
-  <div class="field">
-    <%= f.label :score %><br>
-    <%= f.text_field :score %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <%= f.submit "Save", :class => "btn btn-success"%>
+      <%= link_to "Cancel",new_education_detail_path,:class => "btn btn-warning"%>
+    </div>
+</div>
+</div>
 <% end %>
